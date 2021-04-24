@@ -23,6 +23,10 @@ const warrantySchema = new mongoose.Schema({
   description: String,
 });
 
-const Warranty = mongoose.model('Warranty', warrantySchema);
+const Warranty = mongoose.model(
+  'Warranty',
+  warrantySchema,
+  'warranty_card_details'
+);
 
 module.exports = Warranty;

@@ -2,12 +2,12 @@ const Warranty = require('./../models/warrantyModel');
 
 exports.getAllWarranty = async (req, res) => {
   try {
-    const warrantys = await Warranty.find({});
+    const tours = await Warranty.find();
     res.status(200).json({
       status: 'success',
       requestedAt: req.requestTime,
       data: {
-        warranty: warrantys,
+        tours,
       },
     });
   } catch (err) {
@@ -20,12 +20,12 @@ exports.getAllWarranty = async (req, res) => {
 
 exports.getWarranty = async (req, res) => {
   try {
-    const warrantys = await Warranty.findById(req.params.id);
+    const tours = await Warranty.findById(req.params.id);
     res.status(200).json({
       status: 'success',
       requestedAt: req.requestTime,
       data: {
-        warranty: warrantys,
+        tours,
       },
     });
   } catch (err) {
@@ -38,18 +38,14 @@ exports.getWarranty = async (req, res) => {
 
 exports.updateWarranty = async (req, res) => {
   try {
-    const warrantys = await Warranty.findByIdAndUpdate(
-      req.params.id,
-      req.body,
-      {
-        new: true,
-        runValidators: true,
-      }
-    );
+    const tour = await Warranty.findByIdAndUpdate(req.params.id, req.body, {
+      new: true,
+      runValidators: true,
+    });
     res.status(200).json({
       status: 'success',
       data: {
-        warranty: warrantys,
+        tour,
       },
     });
   } catch (err) {
@@ -62,7 +58,7 @@ exports.updateWarranty = async (req, res) => {
 
 exports.deleteWarranty = async (req, res) => {
   try {
-    const warrantys = await Warranty.findByIdAndDelete(req.params.id);
+    const tour = await Warranty.findByIdAndDelete(req.params.id);
     res.status(204).json({
       status: 'success',
       data: null,
@@ -77,10 +73,12 @@ exports.deleteWarranty = async (req, res) => {
 
 exports.createWarranty = async (req, res) => {
   try {
-    const newWarranty = await Warranty.create(req.body);
+    const newTour = await Warranty.create(req.body);
     res.status(201).json({
       status: 'success',
-      warranty: newWarranty,
+      data: {
+        tour: newTour,
+      },
     });
   } catch (err) {
     res.status(400).json({
