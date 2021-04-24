@@ -1,171 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
-    <title>WeSAFE</title>
-    <link rel="shortcut icon" type="image/jpeg" href="img/logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WeSafe</title>
     <link
-      href="https://fonts.googleapis.com/css?family=Varela+Round"
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
       rel="stylesheet"
     />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-    />
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
-    <link rel="stylesheet" href="css/index.css" />
   </head>
-  <body>
-    <nav class="navbar navbar-default navbar-expand-lg navbar-light ">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="#">We<b>SAFE</b></a>
-        <button
-          type="button"
-          data-target="#navbarCollapse"
-          data-toggle="collapse"
-          class="navbar-toggle"
+  <body
+    class="w-screen h-screen bg-gradient-to-tr from-purple-800 to-purple-500 text-white flex flex-col"
+  >
+    <div
+      class="absolute h-full w-full flex flex-col justify-center px-20 text-3xl gap-8 hidden duration-500 opacity-0"
+      style="
+        background-color: rgba(0, 0, 0, 0.8);
+        backdrop-filter: blur(32px);
+        transition-property: all;
+      "
+      id="overlay"
+    >
+      <a href="">About Us</a>
+      <a href="">Our Team</a>
+      <a href="">Our Services</a>
+      <a href="">Our Future</a>
+      <a id="close">Close</a>
+    </div>
+    <div
+      class="w-full h-16 bg-white text-gray-900 items-center justify-center px-4 gap-8 shadow text-3xl hidden md:flex"
+    >
+      <a href="">About Us</a>
+      <a href="">Our Team</a>
+      <a href="">Our Services</a>
+      <a href="">Our Future</a>
+    </div>
+    <div
+      class="w-full h-16 bg-white text-gray-900 items-end justify-center px-4 gap-8 shadow text-2xl flex flex-col md:hidden"
+    >
+      <button id="ham">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="black"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="feather feather-menu"
         >
-          <span class="navbar-toggler-icon"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+    <div class="w-full h-full flex flex-col items-center justify-center">
+      <div class="flex items-center justify-center rounded-lg h-96 shadow-xl">
+        <div
+          style="width: 44rem"
+          class="h-full flex-col justify-center p-8 bg-gradient-to-tr from-purple-800 to-purple-500 rounded-l-lg hidden lg:flex"
+        >
+          <h1 class="text-6xl">
+            We<span class="font-bold text-yellow-200">SAFE</span>
+          </h1>
+          <div class="h-4"></div>
+          <p class="text-xl">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores
+            voluptate aspernatur ratione delectus, beatae excepturi quam itaque
+            necessitatibus corporis dolores.
+          </p>
+        </div>
+        <div
+          class="w-80 bg-gray-100 p-4 shadow-lg text-gray-900 h-full rounded-r-lg flex flex-col justify-center rounded-l-lg lg:rounded-l-none"
+        >
+          <h2 class="text-3xl">Login</h2>
+          <div class="h-4"></div>
+          <form action="">
+            <input
+              type="text"
+              placeholder="E-mail"
+              class="w-full px-3 py-2 bg-white rounded outline-none shadow hover:shadow-xl focus:shadow-xl focus:ring-2 focus:ring-purple-800 transition-shadow duration-500"
+            />
+            <div class="h-4"></div>
+            <input
+              type="password"
+              placeholder="Password"
+              class="w-full px-3 py-2 bg-white rounded outline-none shadow hover:shadow-xl focus:shadow-xl focus:ring-2 focus:ring-purple-800 transition-shadow duration-500"
+            />
+            <div class="h-4"></div>
+            <button
+              type="submit"
+              class="px-4 py-2 rounded outline-none bg-purple-800 w-full text-white shadow-lg hover:shadow-xl focus:shadow-xl transition-shadow duration-500"
+            >
+              Submit
+            </button>
+            <div class="h-4"></div>
+            <p>
+              New to WeSafe?
+              <a href="/register.html" class="text-purple-800 font-bold"
+                >Register Here</a
+              >
+            </p>
+          </form>
+        </div>
       </div>
-
-      <div id="navbarCollapse" class="collapse navbar-collapse">
-        <ul class="nav navbar-nav shift">
-          <li>
-            <a href="aboutUs.html"><div class="navbar_headings">About Us</div></a>
-          </li>
-          <li>
-            <a href="team.html"><div class="navbar_headings">Our Team</div></a>
-          </li>
-          <li>
-            <a href="aboutUs.html"><div class="navbar_headings">Our Services</div></a>
-          </li>
-          <li>
-            <a href="#"><div class="navbar_headings">Our Future</div></a>
-          </li>
-          
-        </ul>
-
-        <form class="form-inline search" style="    margin-left: 7%;
-        margin-top: 8px;">
-          <input class="form-control search-box" type="search" placeholder="Search" aria-label="Search"
-         style=" width: 250px;">
-         
-        </form>
-
-      
-      </div>
-    </nav>
-
-    <div id='login-form'class='login-page'>
-      <div class="form-box">
-          <div class='button-box'>
-              <div id='btn'></div>
-              <button type='button'onclick='login()'class='toggle-btn' style="color: #fada5e;">Log In</button>
-              <button type='button'onclick='register()'class='toggle-btn'>Register</button>
-          </div>
-          <div class="parent_wrapper">
-          <form id='login' class='input-group-login'>
-              <input type='text'class='input-field'placeholder='Email Id' required >
-  <input type='password'class='input-field'placeholder='Enter Password' required>
-  <div class="remember">
-  <input type='checkbox'class='check-box'><span>Remember Password</span>
-</div>
-  <button type='submit'class='submit-btn'>Log in</button>
-  <div class="google">
-  <div id="my-signin2"></div>
-</div>
-
-
-</form>
-<form id='register' class='input-group-register'>
-   <input type='text'class='input-field'placeholder='First Name' required>
-   <input type='text'class='input-field'placeholder='Last Name ' required>
-   <input type='email'class='input-field'placeholder='Email Id' required>
-   <input type='password'class='input-field'placeholder='Enter Password' required>
-   <input type='password'class='input-field'placeholder='Confirm Password'  required>
-   <div class="remember">
-   <input type='checkbox'class='check-box'><span>I agree to the terms and conditions</span>
-              <button type='submit'class='submit-btn'>Register</button>
-            </div>
-     </form>
-     </div>
-  
-      </div>
-  </div>
-</div>
-
-
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </div>
     <script>
-      // Prevent dropdown menu from closing when click inside the form
-      $(document).on("click", ".navbar-right .dropdown-menu", function (e) {
-        e.stopPropagation();
+      const overlay = document.querySelector('#overlay');
+
+      const button = document.querySelector('#ham');
+      button.addEventListener('click', () => {
+        overlay.classList.remove('hidden');
+        overlay.classList.add('opacity-100');
+        overlay.classList.remove('opacity-0');
+      });
+
+      const close = document.querySelector('#close');
+      close.addEventListener('click', (e) => {
+        e.preventDefault();
+        overlay.classList.add('hidden');
+        overlay.classList.remove('opacity-100');
+        overlay.classList.add('opacity-0');
       });
     </script>
-    <script>
-      const x=document.getElementById('login');
-  const y=document.getElementById('register');
-  const z=document.getElementById('btn');
-
-  function register() {
-    x.style.left='calc(-100%)';
-    y.style.left='0';
-    z.style.left='110px';
-  }
-  function login() {
-    x.style.left='0';
-    y.style.left='calc(100%)';
-    z.style.left='0px';
-  }
-</script>
-
-<script>
-  function onSuccess(googleUser) {
-    console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
-  }
-  function onFailure(error) {
-    console.log(error);
-  }
-  function renderButton() {
-    gapi.signin2.render('my-signin2', {
-      'scope': 'profile email',
-      'width': 261,
-      'height': 40,
-      'longtitle': true,
-      'theme': 'light',
-      'onsuccess': onSuccess,
-      'onfailure': onFailure,
-     
-    });
-  }
-</script>
-
-<script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
-
-
-
   </body>
 </html>
