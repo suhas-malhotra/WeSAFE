@@ -126,19 +126,18 @@
       });
     </script>
     <script>
-      var x=document.getElementById('login');
-  var y=document.getElementById('register');
-  var z=document.getElementById('btn');
-  function register()
-  {
-      x.style.left='calc(-100%)';
-      y.style.left='0';
+      const x=document.getElementById('login');
+  const y=document.getElementById('register');
+  const z=document.getElementById('btn');
+
+  function register() {
+    x.style.left='calc(-100%)';
+    y.style.left='0';
     z.style.left='110px';
   }
-  function login()
-  {
-       x.style.left='0';
-       y.style.left='calc(100%)';
+  function login() {
+    x.style.left='0';
+    y.style.left='calc(100%)';
     z.style.left='0px';
   }
 </script>

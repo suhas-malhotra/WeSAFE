@@ -191,7 +191,7 @@
 }
 
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: "Montserrat", sans-serif;
   /* background-color: rgba(65, 161, 187, 0.292); */
   background: rgb(9, 9, 121);
   background: linear-gradient(
@@ -257,7 +257,7 @@ body {
   padding-left: 40px;
   padding-right: 40px;
   font-weight: bolder;
-  font-family: "Merriweather", serif;
+  font-family: "Montserrat", serif;
 }
 .shift {
   margin-left: 5%;

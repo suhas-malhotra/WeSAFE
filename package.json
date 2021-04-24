@@ -4,7 +4,9 @@
   "description": "WeSafe ",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prod:postcss": "npx cross-env NODE_ENV=production npx postcss ./public/css/base.css -d ./public/css/dist.css --config ./postcss.config.js",
+    "dev:postcss": "npx postcss ./public/css/base.css -d ./public/css/dist.css --config ./postcss.config.js"
   },
   "author": "Zinc Corporation",
   "license": "ISC",
@@ -13,5 +15,10 @@
     "express": "^4.17.1",
     "mongoose": "^5.12.5",
     "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.2.5",
+    "postcss": "^8.2.12",
+    "tailwindcss": "^2.1.2"
   }
 }
