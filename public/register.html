@@ -24,7 +24,9 @@
       id="overlay"
     >
       <a href="aboutUs.html">About Us</a>
+      <a href="">Contact Us</a>
       <a href="team.html">Our Team</a>
+
       <a href="">Our Services</a>
       <a href="">Our Future</a>
       <a id="close">Close</a>
@@ -34,7 +36,9 @@
       class="w-full h-16 bg-white text-gray-900 items-center justify-center px-4 gap-12 shadow text-2xl hidden md:flex"
     >
       <a href="aboutUs.html">About Us</a>
+      <a href="">Contact Us</a>
       <a href="team.html">Our Team</a>
+
       <a href="">Our Services</a>
       <a href="">Our Future</a>
     </div>
@@ -67,7 +71,7 @@
           class="h-full flex-col justify-center p-8 bg-gradient-to-tr from-purple-800 to-purple-500 rounded-l-lg hidden lg:flex"
         >
           <h1 class="text-6xl">
-            We<span class="font-bold text-yellow-200">SAFE</span>
+            We<span class="font-bold text-yellow-300">SAFE</span>
           </h1>
           <div class="h-4"></div>
           <p class="text-xl">
@@ -132,21 +136,21 @@
       </div>
     </div>
     <script>
-      const overlay = document.querySelector("#overlay");
+      const overlay = document.querySelector('#overlay');
 
-      const button = document.querySelector("#ham");
-      button.addEventListener("click", () => {
-        overlay.classList.remove("hidden");
-        overlay.classList.add("opacity-100");
-        overlay.classList.remove("opacity-0");
+      const button = document.querySelector('#ham');
+      button.addEventListener('click', () => {
+        overlay.classList.remove('hidden');
+        overlay.classList.add('opacity-100');
+        overlay.classList.remove('opacity-0');
       });
 
-      const close = document.querySelector("#close");
-      close.addEventListener("click", (e) => {
+      const close = document.querySelector('#close');
+      close.addEventListener('click', (e) => {
         e.preventDefault();
-        overlay.classList.add("hidden");
-        overlay.classList.remove("opacity-100");
-        overlay.classList.add("opacity-0");
+        overlay.classList.add('hidden');
+        overlay.classList.remove('opacity-100');
+        overlay.classList.add('opacity-0');
       });
     </script>
   </body>

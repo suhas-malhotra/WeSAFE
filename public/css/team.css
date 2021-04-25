@@ -8,13 +8,7 @@
     width: 320px !important;
   }
 }
-@media screen and (max-width: 768px) {
-  .card-1,
-  .backside-1 {
-    visibility: visible !important;
-    display: none;
-  }
-}
+
 @media screen and (min-width: 768px) and (max-width: 800px) {
   .form-inline .input-group {
     width: 300px;

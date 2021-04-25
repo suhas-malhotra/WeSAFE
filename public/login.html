@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>WeSafe</title>
+    <title>WeSAFE</title>
+    <link rel="shortcut icon" type="image/jpeg" href="img/logo.png" />
     <link
       href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
       rel="stylesheet"
@@ -22,17 +23,20 @@
       "
       id="overlay"
     >
-      <a href="">About Us</a>
-      <a href="">Our Team</a>
+      <a href="aboutUs.html">About Us</a>
+      <a href="">Contact Us</a>
+      <a href="team.html">Our Team</a>
       <a href="">Our Services</a>
+
       <a href="">Our Future</a>
       <a id="close">Close</a>
     </div>
     <div
-      class="w-full h-16 bg-white text-gray-900 items-center justify-center px-4 gap-8 shadow text-2xl hidden md:flex"
+      class="w-full h-16 bg-white text-gray-900 items-center justify-center px-4 gap-12 shadow text-2xl hidden md:flex"
     >
-      <a href="">About Us</a>
-      <a href="">Our Team</a>
+      <a href="aboutUs.html">About Us</a>
+      <a href="">Contact Us</a>
+      <a href="team.html">Our Team</a>
       <a href="">Our Services</a>
       <a href="">Our Future</a>
     </div>
@@ -65,7 +69,7 @@
           class="h-full flex-col justify-center p-8 bg-gradient-to-tr from-purple-800 to-purple-500 rounded-l-lg hidden lg:flex"
         >
           <h1 class="text-6xl">
-            We<span class="font-bold text-yellow-200">SAFE</span>
+            We<span class="font-bold text-yellow-300">SAFE</span>
           </h1>
           <div class="h-4"></div>
           <p class="text-xl">
@@ -101,7 +105,7 @@
             <div class="h-4"></div>
             <p>
               New to WeSafe?
-              <a href="/register.html" class="text-purple-800 font-bold"
+              <a href="register.html" class="text-purple-800 font-bold"
                 >Register Here</a
               >
             </p>
@@ -109,6 +113,7 @@
         </div>
       </div>
     </div>
+
     <script>
       const overlay = document.querySelector('#overlay');
 
