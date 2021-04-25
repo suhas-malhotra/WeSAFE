@@ -7,7 +7,26 @@
   .form-box {
     width: 320px !important;
   }
+
 }
+@media screen and (min-width:400px) and (max-width:500px) {
+  .contact-us2{
+    position: absolute !important;
+    left: 15% !important;
+    width: 29rem !important;
+  }
+}
+@media screen and (min-width: 350px) and (max-width:400px){
+  .contact-us2{
+    width: 29rem !important;
+  }
+}
+@media screen and (max-width: 350px){
+  .contact-us2{
+    width: 26rem !important;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .log-in {
     width: 250px !important;
@@ -34,7 +53,38 @@
     position: relative;
   }
 }
+
+@media screen and (min-width: 650px) and (max-width:768px) {
+  .contact-us2{
+    position: absolute !important;
+    left: 29% !important;
+  }
+}
+@media screen and (min-width: 500px) and (max-width:650px){
+  .contact-us2{
+    position: absolute !important;
+    left: 20%  !important;
+    width: 29rem !important;
+  }
+}
+@media screen and (max-width:900px) {
+  .maincontainer{
+    width: 90% !important;
+    display: block !important;
+    position: absolute !important;
+    top: 2% !important;
+    height: 90rem !important;
+    padding: 2rem !important;
+  }
+  .contact-us1{
+    display: inline !important;
+  }
+}
 @media screen and (min-width: 768px) and (max-width: 800px) {
+  .contact-us2{
+    position: absolute !important;
+    left: 29% !important;
+  }
   .form-inline .input-group {
     width: 300px !important;
     margin-left: 30px;
@@ -85,6 +135,10 @@
 }
 
 @media screen and (min-width: 800px) and (max-width: 900px) {
+  .contact-us2{
+    position: absolute !important;
+    left: 29% !important;
+  }
   .form-inline .input-group {
     width: 300px;
     margin-left: 30px;
@@ -136,6 +190,9 @@
 }
 
 @media screen and (min-width: 900px) and (max-width: 1050px) {
+  .maincontainer{
+    width: 90% !important;
+  }
   .about-text-2 {
     display: none;
   }
@@ -149,6 +206,9 @@
   }
 }
 @media screen and (min-width: 1000px) and (max-width: 1100px) {
+  .maincontainer{
+    width: 80% !important;
+  }
   .about-text-2 {
     display: none;
   }
@@ -361,4 +421,100 @@ body {
 
 .icon-bar {
   background-color: black !important;
+}
+
+.whole-page{
+  font-family: inherit;
+  line-height: inherit;
+  width: 100%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+  --tw-ring-inset: var(--tw-empty, ); 
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: rgba(59, 130, 246, 0.5);
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+  box-sizing: border-box;
+  border-width: 0;
+  border-style: solid;
+  border-color: #e5e7eb;
+  position: absolute;
+  --tw-gradient-to: #8b5cf6;
+}
+/* main container box*/
+.maincontainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  --tw-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  box-shadow: var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow);
+  height: 50rem;
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+  border-width: 0;
+  border-style: solid;
+  border-color: #e5e7eb;
+  --tw-text-opacity: 1;
+  position: absolute;
+  width: 1023px;
+  color: white;
+  padding: 3rem;
+}
+.contact-us1{
+  display: flex;
+  flex-direction: column;
+  color: white;
+  width: 62rem;
+  padding: 2rem;
+}
+.contact-us2{
+  border: 2px solid white;
+  background-color: white;
+  width: 34rem;
+  padding: 2rem;
+  border-radius: 12px;
+  color: black;
+  display: grid;
+}
+.flex-center-align{
+  display: flex;
+  padding: 6px 0px 1px 10px;
+  align-items: center;
+}
+input, textarea {
+  border: 1px solid rgb(216, 208, 208);
+  border-radius: 6px;
+  padding: 4px;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  margin: 8px;
+}
+.message-btn{
+  border: 1px solid rgb(216, 208, 208);
+  border-radius: 6px;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  margin: 8px;
+  float: right;
+  background-color: rgb(45,100,150);
+  color: white;
+  padding: 8px;
+}
+.message-btn:hover{
+  background-color: rgb(5, 58, 107) ;
+  color: rgb(243, 243, 86);
+  border: none;
+  font-size: 15px;
+}
+.icons{
+  margin: 5px;
 }
