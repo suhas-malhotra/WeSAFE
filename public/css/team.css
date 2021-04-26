@@ -1,273 +1,78 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed&family=Roboto:wght@100;500&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital@1&display=swap");
-
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Roboto&display=swap');
 @media screen and (max-width: 768px) {
   .card-1,
   .backside-1 {
     display: none;
   }
 }
-
-@media screen and (min-width: 768px) and (max-width: 800px) {
-  .form-inline .input-group {
-    width: 300px;
-    margin-left: 30px;
-  }
-  .navbar-brand {
-    padding-right: 0px !important;
-    font-size: 35px !important;
-  }
-
-  .shift {
-    margin-left: 1px !important;
-  }
-
-  .log-in {
-    width: 130px !important;
-  }
-  .navbar li a {
-    padding: 15px 5px 15px 10px !important;
-    font-size: 20px !important;
-  }
-}
-
-@media screen and (min-width: 800px) and (max-width: 900px) {
-  .form-inline .input-group {
-    width: 300px;
-    margin-left: 30px;
-  }
-  .navbar-brand {
-    padding-right: 0px !important;
-    font-size: 35px !important;
-  }
-
-  .shift {
-    margin-left: 0px !important;
-  }
-
-  .log-in {
-    width: 140px !important;
-  }
-  .navbar li a {
-    padding: 15px 10px 15px 10px !important;
-    font-size: 20px !important;
-  }
-}
-@media screen and (min-width: 900px) and (max-width: 1000px) {
-  .form-inline .input-group {
-    width: 300px;
-    margin-left: 30px;
-  }
-
-  .navbar-brand {
-    padding-right: 0px !important;
-    font-size: 35px !important;
-  }
-
-  .shift {
-    margin-left: 25px !important;
-  }
-
-  .log-in {
-    width: 140px !important;
-  }
-  .navbar li a {
-    padding: 15px 10px 15px 25px !important;
-    font-size: 20px !important;
-  }
-}
-@media screen and (min-width: 1000px) and (max-width: 1100px) {
-  .form-inline .input-group {
-    width: 300px;
-    margin-left: 30px;
-  }
-  .navbar-brand {
-    padding-right: 0px !important;
-  }
-
-  .shift {
-    margin-left: 0px !important;
-  }
-
-  .log-in {
-    width: 140px !important;
-  }
-  .navbar li a {
-    padding: 14px 10px 15px 25px !important;
-  }
-}
-@media screen and (min-width: 1100px) and (max-width: 1200px) {
-  .form-inline .input-group {
-    width: 300px;
-    margin-left: 30px;
-  }
-  .navbar-brand {
-    padding-right: 0px !important;
-  }
-
-  .shift {
-    margin-left: 0px !important;
-  }
-
-  .log-in {
-    width: 200px !important;
-  }
-  .navbar li a {
-    padding: 15px 10px 15px 30px !important;
-  }
-}
-@media screen and (min-width: 1200px) and (max-width: 1300px) {
-  .form-inline .input-group {
-    width: 300px;
-    margin-left: 30px;
-  }
-  .shift {
-    margin-left: 0px !important;
-  }
-
-  .log-in {
-    width: 200px !important;
-  }
-  .navbar li a {
-    padding: 15px 10px 15px 30px !important;
-  }
-}
-@media screen and (min-width: 1300px) and (max-width: 1400px) {
-  .form-inline .input-group {
-    width: 300px;
-    margin-left: 30px;
-  }
-
-  .search {
-    margin-left: 5px !important;
-  }
-  .log-in {
-    width: 200px !important;
-  }
-}
-@media screen and (min-width: 1400px) and (max-width: 1496px) {
-  .form-inline .input-group {
-    width: 300px;
-    margin-left: 30px;
-  }
-
-  .search {
-    margin-left: 10px !important;
-  }
-}
-
 @media screen and (min-width: 768px) and (max-width: 1000px) {
   .card-1,
   .backside-1 {
     visibility: visible !important;
     display: none;
   }
-  .col-sm-6 {
-    margin-left: 180px !important;
+}
+@media screen and (max-width: 988px) {
+  .navbar {
+    padding: 1rem !important;
+  }
+  #navbarSupportedContent > ul {
+    padding-left: 0.8rem !important;
+  }
+  #navbarSupportedContent > ul > li:nth-child(n) > a {
+    padding: 0.8rem 0rem !important;
   }
 }
 
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
 body {
-  font-family: "Montserrat", sans-serif;
-  background: rgb(9, 9, 121);
   background: linear-gradient(90deg, #5b21b6 16%, #7c3aed 100%);
 }
-
+html {
+  scroll-behavior: smooth;
+}
 .navbar {
   background: white;
-  padding-left: 16px;
-  padding-right: 16px;
-
-  border-radius: 0;
-  width: 100%;
+  padding: -1rem 8rem !important;
+  z-index: 1000;
+}
+.navbar-nav {
+  padding-right: 70px;
+}
+.navbar .navbar-brand {
+  font-size: 2rem;
+  font-weight: 700;
+}
+nav img {
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  margin-top: 9px;
+  float: left;
+  margin-right: 10px;
 }
 
-.navbar .navbar-brand,
-.navbar .navbar-brand:hover,
-.navbar .navbar-brand:focus {
-  padding-left: 0;
-  font-size: 50px;
-  padding-right: 50px;
-  color: black !important;
-}
-.navbar .navbar-brand b {
-  font-weight: bold;
-  color: #fcd34d;
-}
-.navbar .form-inline {
-  display: inline-block;
-}
-.navbar .nav li {
-  position: relative;
-}
-
-.navbar .nav li a {
+#navbarSupportedContent > ul > li:nth-child(n) > a {
   color: black;
-  font-size: 25px;
-  padding-left: 40px;
-  padding-right: 40px;
-  font-weight: bolder;
-  font-family: "Montserrat", serif;
+  font-size: 1.5rem;
+  padding: 0rem 0.8rem;
 }
-.shift {
-  margin-left: 6.5%;
-}
-.navbar_headings:hover {
-  color: #5b21b6;
+#navbarSupportedContent > ul > li:nth-child(n) > a:hover,
+#navbarSupportedContent > ul > li:nth-child(n) > a:active {
+  color: blueviolet;
+  border-bottom: 4px solid purple;
 }
 
-.navbar .navbar-right li:first-child a {
-  padding-right: 35px;
-  padding-left: 50px;
-}
-.navbar ul li i {
-  font-size: 18px;
-}
-.navbar .dropdown-menu i {
-  font-size: 16px;
-  min-width: 22px;
-}
-.navbar ul.nav li.active a,
-.navbar ul.nav li.open > a {
-  background: transparent !important;
-}
-.navbar .dropdown-menu {
-  border-radius: 1px;
-  border-color: black;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-}
-.navbar .nav .dropdown-menu li {
-  color: black;
-  font-weight: normal;
-}
-.navbar .nav .dropdown-menu li a,
-.navbar .nav .dropdown-menu li a:hover,
-.navbar .nav .dropdown-menu li a:focus {
-  padding: 8px 20px;
-  line-height: normal;
-}
-.navbar .navbar-form {
-  border: none;
-}
-
-.log-in {
-  width: 200px;
-  padding: 5px;
-  margin-top: 6px;
-  border-radius: 120px;
-  border: none;
-  background-color: #7c3aed;
-  font-size: 20px;
-  color: white;
-}
-
-.log-in:hover {
-  background-color: #5b21b6;
-  color: #fada5e;
-}
-
-.icon-bar {
-  background-color: black !important;
+#navbarSupportedContent > button {
+  background: purple;
+  font-weight: 600;
+  padding: 0.4rem 1.4rem;
+  border-radius: 30px;
 }
 
 section {
@@ -286,6 +91,9 @@ section .section-title {
   border: none;
   background: #ffffff;
   border-radius: 30px;
+}
+.container {
+  padding: 40px;
 }
 
 .frontside {
