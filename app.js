@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const methodOverride = require('method-override');
 const ejsMate = require('ejs-mate');
 const session = require('express-session');
+
 const flash = require('connect-flash');
 const passport = require('passport');
 const LocalStrategy = require('passport-local');
@@ -30,9 +31,11 @@ app.engine('ejs', ejsMate);
 //for parsing the body
 app.use(express.urlencoded({ extended: true }));
 
-//creating a local mongoose database
+//creating a mongoose database
+const dbUrl =
+  'mongodb+srv://suhasMalhotra:Q96Uje3m2MS6qQL@wesafe.rhdsf.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 mongoose
-  .connect('mongodb://localhost:27017/WeSAFE', {
+  .connect(dbUrl, {
     useCreateIndex: true,
     useNewUrlParser: true,
     useFindAndModify: false,
