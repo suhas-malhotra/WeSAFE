@@ -3,7 +3,7 @@
 <%=warranty.company%><br />
 <%=warranty.product%> <br />
 <%=warranty.period%> <br />
-<%=warranty.purchase%> <br />
+<%= warranty.purchase %> <br />
 <%=warranty.description%> <br />
 <a href="/warrantys/<%=warranty._id%>/edit"><button>Edit</button></a>
 <form action="/warrantys/<%=warranty._id%>/?_method=DELETE" method="POST">

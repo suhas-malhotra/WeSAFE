@@ -1,5 +1,5 @@
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+const { ObjectID } = require('mongodb');
+const { Schema, model } = require('mongoose');
 
 const WarrantySchema = new Schema({
   company: String,
@@ -7,6 +7,7 @@ const WarrantySchema = new Schema({
   purchase: Date,
   period: Number,
   description: String,
+  owner: ObjectID,
 });
 
-module.exports = mongoose.model('Warranty', WarrantySchema);
+module.exports = model('Warranty', WarrantySchema);

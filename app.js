@@ -1,4 +1,5 @@
 const express = require('express');
+const connectMongo = require('connect-mongo');
 const path = require('path');
 const mongoose = require('mongoose');
 const methodOverride = require('method-override');
@@ -46,17 +47,21 @@ mongoose
   });
 
 //making a session
-const sessionConfig = {
-  secret: 'i am suhas',
-  resave: false,
-  saveUninitialized: true,
-  cookie: {
-    httpOnly: true,
-    expires: Date.now() + 1000 * 60 * 60 * 24 * 7,
-    maxAge: 1000 * 60 * 60 * 24 * 7,
-  },
-};
-app.use(session(sessionConfig));
+app.use(
+  session({
+    secret: 'i am suhas',
+    resave: false,
+    saveUninitialized: true,
+    cookie: {
+      httpOnly: true,
+      expires: Date.now() + 1000 * 60 * 60 * 24 * 7,
+      maxAge: 1000 * 60 * 60 * 24 * 7,
+    },
+    store: connectMongo.create({
+      mongoUrl: dbUrl,
+    }),
+  })
+);
 
 //using flash for making successful message
 app.use(flash());

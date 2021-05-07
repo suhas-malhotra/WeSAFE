@@ -35,13 +35,12 @@
     <label for="purchase" class="col-sm-2 col-form-label"
       >Date Of Purchase</label
     >
-
     <div class="col-sm-10">
       <input
         type="date"
         name="warranty[purchase]"
         class="form-control col-sm-10 shadow p-3 mb-2 bg-white rounded"
-        value="<%= warranty.purchase%>"
+        value="<%= purchase %>"
         id="purchase"
         required
       />
@@ -67,13 +66,14 @@
     <div class="col-sm-10">
       <textarea
         name="warranty[description]"
-        value="<%= warranty.description %>"
         id="description"
         cols="10"
         rows="5"
         class="form-control col-sm-10 shadow p-3 mb-2 bg-white rounded"
         required
-      ></textarea>
+      >
+<%= warranty.description %></textarea
+      >
     </div>
   </div>
   <div class="form-group row text-center">

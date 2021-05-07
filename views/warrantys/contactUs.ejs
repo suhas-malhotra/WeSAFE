@@ -26,20 +26,32 @@
   
   
           <!-- input form -->
+          <form action="https://formspree.io/f/xayaqzlg" method="POST" id="my-form">
           <div class="contact-us2">
             <b class="flex-center-align">Your Name</b>
-            <input type="text" placeholder="Enter your Name">
+            <input type="text" name="name" placeholder="Enter your Name">
             <b class="flex-center-align">Email Address</b>
-            <input type="email" placeholder="email@example.com">
+            <input type="email" placeholder="email@example.com" name="email">
             <b class="flex-center-align">Your Name</b>
-              <textarea rows="6" placeholder="Type your message here">Type your message here</textarea>
-            <div><button class="message-btn">Send Message</button></div>
+           
+         
+              <textarea rows="6" name="message" ></textarea>
+            <div><button class="message-btn" type="submit">Send Message</button></div>
+            <p id="my-form-status"></p>
           </div>
+        </form>
+        
   
   
         </div>
           
       </div>
+      <!-- <div class="alert alert-success alert-dismissible fade show success mt-2" role="alert">
+        <p>Thank you for Contacting Us</p>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
 
    
-  
+   -->
