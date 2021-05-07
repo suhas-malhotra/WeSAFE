@@ -1,5 +1,22 @@
 <% layout('layouts/boilerplate') %>
-<div class="alert alert-danger mx-5 mt-5" role="alert">
-  <h4 class="alert-heading"><%= err.message %></h4>
-  <p><%=err.stack %></p>
-</div>
+<body style="background-color: rgb(105, 86, 129); color: wheat">
+  <div class="main-container">
+    <div class="anim-1"></div>
+    <div class="anim-2"></div>
+    <div class="anim-3"></div>
+    <div class="anim-4"></div>
+    <div class="anim-5"></div>
+    <div class="anim-6"></div>
+    <div class="anim-7"></div>
+    <div class="anim-8"></div>
+
+    <div class="circle-1 shadow-lg p-3 mb-5 bg-body rounded">
+      <div class="circle-2">
+        <b style="z-index: 100; margin-bottom: -134px">4<b id="zero">0</b>4</b>
+
+        <button class="home-btn">Go back Home</button>
+      </div>
+    </div>
+    <p style="font-size: 20px"><%= error.message %></p>
+  </div>
+</body>

@@ -5,15 +5,12 @@ const catchAsync = require('../utils/catchAsync');
 const ExpressError = require('../utils/ExpressError');
 const Warranty = require('../models/warranty');
 const { warrantySchema } = require('../schemas.js');
-
+const { isLoggedIn } = require('../middleware');
 //for displaying all the card in the index.ejs file
 router.get(
   '/',
+  isLoggedIn,
   catchAsync(async (req, res) => {
-    if (!req.isAuthenticated()) {
-      req.flash('error', 'You must be logged in');
-      return res.redirect('/users/login');
-    }
     const warrantys = await Warranty.find({});
     res.render('warrantys/index', { warrantys });
   })
@@ -37,6 +34,7 @@ const validateWarranty = (req, res, next) => {
 //adding a card and then takes you back
 router.post(
   '/',
+  isLoggedIn,
   validateWarranty,
   catchAsync(async (req, res) => {
     const warranty = new Warranty(req.body.warranty);
@@ -49,6 +47,7 @@ router.post(
 //to show a card when you click on it
 router.get(
   '/:id',
+  isLoggedIn,
   catchAsync(async (req, res) => {
     const warranty = await Warranty.findById(req.params.id);
     if (!warranty) {
@@ -62,11 +61,8 @@ router.get(
 //opening update file
 router.get(
   '/:id/edit',
+  isLoggedIn,
   catchAsync(async (req, res) => {
-    if (!req.isAuthenticated()) {
-      req.flash('error', 'You must be logged in');
-      return res.redirect('/users/login');
-    }
     const warranty = await Warranty.findById(req.params.id);
 
     res.render('warrantys/edit', { warranty });
@@ -76,6 +72,7 @@ router.get(
 //updating the card
 router.put(
   '/:id',
+  isLoggedIn,
   validateWarranty,
   catchAsync(async (req, res) => {
     const { id } = req.params;
@@ -90,6 +87,7 @@ router.put(
 //to delete a card
 router.delete(
   '/:id/',
+  isLoggedIn,
   catchAsync(async (req, res) => {
     const { id } = req.params;
     await Warranty.findByIdAndDelete(id);

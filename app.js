@@ -66,17 +66,34 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 app.use((req, res, next) => {
+  res.locals.currentUser = req.user;
   res.locals.success = req.flash('success');
   res.locals.error = req.flash('error');
   next();
 });
 
-app.use('/users', userRoutes);
+app.use('/', userRoutes);
+
 app.use('/warrantys', warrantysRoutes);
 
 //for home page
 app.get('/', (req, res) => {
   res.render('home');
+});
+
+app.get('/pricing', (req, res) => {
+  res.render('warrantys/pricing');
+});
+
+app.get('/about-us', (req, res) => {
+  res.render('warrantys/aboutUs');
+});
+
+app.get('/contact-us', (req, res) => {
+  res.render('warrantys/contactUs');
+});
+app.get('/team', (req, res) => {
+  res.render('warrantys/team');
 });
 
 //(position matters)
