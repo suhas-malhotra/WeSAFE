@@ -4,9 +4,9 @@ const { Schema, model } = require('mongoose');
 const WarrantySchema = new Schema({
   company: String,
   product: String,
-  purchase: Date,
-  expiry: Date,
-  mailDate: Date,
+  purchase: String,
+  expiry: String,
+  mailDate: String,
   period: Number,
   description: String,
   owner: ObjectID,

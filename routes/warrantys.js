@@ -19,6 +19,7 @@ router.get(
   catchAsync(async (req, res) => {
     const userId = req.user._doc._id;
     // let d = new Date().toISOString();
+    //for(var i=0;i<warrantys.length;i++){ purchase: dateToISOLikeButLocal(warrantys[i].purchase)},
 
     const warrantys = await Warranty.find({
       owner: userId,
@@ -31,8 +32,6 @@ router.get(
     } else {
       res.render('warrantys/index', {
         warrantys,
-        purchase: dateToISOLikeButLocal(warrantys[0].purchase),
-        expiry: dateToISOLikeButLocal(warrantys[0].expiry),
       });
     }
   })
@@ -65,10 +64,17 @@ router.post(
       owner: req.user._doc._id,
     });
     const date = moment(warranty.purchase);
-    const expDate = date.add(warranty.period, 'month').toDate();
+    console.log(date);
+    const eDate = date.add(warranty.period, 'month').toDate();
+    console.log(eDate);
+    const expDate = dateToISOLikeButLocal(eDate);
+    console.log(expDate);
     warranty.expiry = expDate;
-    const mDate = moment(expDate);
-    const finalDate = mDate.subtract(7, 'date').toDate();
+    const mDate = moment(warranty.expiry);
+    const fDate = mDate.subtract(7, 'date').toDate();
+    console.log(fDate);
+    const finalDate = dateToISOLikeButLocal(fDate);
+    console.log(finalDate);
     warranty.mailDate = finalDate;
     await warranty.save();
     req.flash('success', 'Successfully maded a warranty card');
@@ -89,8 +95,6 @@ router.get(
     }
     res.render('warrantys/show', {
       warranty,
-      purchase: dateToISOLikeButLocal(warranty.purchase),
-      expiry: dateToISOLikeButLocal(warranty.expiry),
     });
   })
 );
