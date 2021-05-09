@@ -1,12 +1,13 @@
 {
-  "name": "wesafe_final",
+  "name": "wesafe",
   "version": "1.0.0",
   "description": "WeSafe ",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "prod:postcss": "npx cross-env NODE_ENV=production npx postcss ./public/css/base.css -d ./public/css/dist.css --config ./postcss.config.js",
-    "dev:postcss": "npx postcss ./public/css/base.css -d ./public/css/dist.css --config ./postcss.config.js"
+    "dev:postcss": "npx postcss ./public/css/base.css -d ./public/css/dist.css --config ./postcss.config.js",
+    "start" : "node app.js"
   },
   "author": "Zinc Corporation",
   "license": "ISC",
