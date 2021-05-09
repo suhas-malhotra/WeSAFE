@@ -157,12 +157,11 @@
 
 body {
   font-family: 'Montserrat', sans-serif;
-  /* background-color: rgba(65, 161, 187, 0.292); */
-  background: rgb(9, 9, 121);
+  background: rgb(91, 33, 182);
   background: linear-gradient(
-    90deg,
-    rgba(9, 9, 121, 1) 16%,
-    rgba(0, 212, 255, 1) 100%
+    60deg,
+    rgba(91, 33, 182, 1) 32%,
+    rgba(124, 58, 237, 1) 100%
   );
 }
 .form-control {
@@ -370,7 +369,7 @@ span.psw {
   justify-content: center;
   align-items: center;
   padding: 20px;
-  margin: 13px 0px 0px 19px;
+  margin: 20px 0px 0px 10px;
   box-shadow: 12px 12px 24px 0 rgba(0, 0, 0, 0.9),
     -12px -12px 24px 0 rgba(255, 255, 255, 0.5);
 }
@@ -379,6 +378,9 @@ span.psw {
     -12px -12px 24px 0 rgba(255, 255, 255, 0.8);
   padding: 24px;
   animation: jelly 0.5s;
+}
+a:hover {
+  text-decoration: none;
 }
 
 /* Change styles for span and cancel button on extra small screens

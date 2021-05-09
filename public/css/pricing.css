@@ -36,3 +36,19 @@
   color: white;
   background: #7c3aed;
 }
+.blur {
+  filter: blur(5px);
+}
+.price-comming-soon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 40%;
+  height: 200px;
+  width: 300px;
+  z-index: 2;
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 20px;
+}
