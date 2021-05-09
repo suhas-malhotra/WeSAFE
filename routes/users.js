@@ -50,7 +50,6 @@ router.post(
 
 router.get('/logout', (req, res) => {
   req.logout();
-  // req.flash('success', 'GooodByee !!');
   res.redirect('/');
 });
 module.exports = router;

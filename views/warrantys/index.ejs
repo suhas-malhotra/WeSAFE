@@ -1,6 +1,12 @@
 <% layout('layouts/boilerplate') %>
 <div style="display: flex">
-  <input type="text" class="search-bar" placeholder="SEARCH IT !!" />
+  <input
+    type="text"
+    class="search-bar"
+    placeholder="SEARCH IT !!"
+    id="myInput"
+    onkeyup="searchWarranty"
+  />
   <button class="btn btn-primary search-btn">
     <img src="https://img.icons8.com/ios/20/000000/search--v1.png" />
   </button>
@@ -115,20 +121,19 @@
 
 <div class="row" style="padding-right: 12px">
   <%for(let warranty of warrantys) {%>
+
   <div class="col-12 col-md-6 col-xl-4" style="padding: 2px">
     <a href="warrantys/<%=warranty._id%>"
       ><div class="cards">
         <h2 style="color: black; font-size: 2.3rem">
-          <%=warranty.company%> <br />
+          <%=warranty.company%><br />
         </h2>
         <%=warranty.product%> <br />
         <div class="row">
           <div class="col-6">
             <b>Date of Purchase : </b> <%= purchase %> <br />
           </div>
-          <div class="col-6">
-            <b>Date of Expiry : </b> <%= warranty.expiry %><br />
-          </div>
+          <div class="col-6"><b>Date of Expiry : </b> <%= expiry %><br /></div>
         </div>
       </div>
     </a>
