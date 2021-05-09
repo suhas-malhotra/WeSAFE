@@ -34,7 +34,8 @@ app.engine('ejs', ejsMate);
 app.use(express.urlencoded({ extended: true }));
 
 //creating a mongoose database
-const dbUrl = process.env.DBURL;
+const dbUrl =
+  'mongodb+srv://suhasMalhotra:Q96Uje3m2MS6qQL@wesafe.rhdsf.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 
 mongoose
   .connect(dbUrl, {
