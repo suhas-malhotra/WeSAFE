@@ -1,8 +1,7 @@
 const express = require('express');
-const { ObjectID } = require('mongodb');
 const moment = require('moment');
+const nodemailer = require('nodemailer');
 const cron = require('node-cron');
-
 const router = express.Router();
 
 const catchAsync = require('../utils/catchAsync');
@@ -18,20 +17,43 @@ router.get(
   isLoggedIn,
   catchAsync(async (req, res) => {
     const userId = req.user._doc._id;
-    // let d = new Date().toISOString();
+    const emailID = req.user._doc.email;
     const warrantys = await Warranty.find({
       owner: userId,
     });
 
-    if (warrantys.length == 0) {
-      res.render('warrantys/index', {
-        warrantys,
-      });
-    } else {
-      res.render('warrantys/index', {
-        warrantys,
-      });
-    }
+    cron.schedule('* * * * * *', () => {
+      let d = new Date().toISOString();
+      for (var i = 0; i < warrantys.length; i++) {
+        if (warrantys[i].ISOMailDate === d) {
+          const mailOptions = {
+            from: 'wesafe.2021@gmail.com',
+            to: `${emailID}`,
+            subject: 'Important message from WeSAFE',
+            text: `your product ${warrantys[i].product} of the company
+            ${warrantys[i].company}is about to expire in 7 days`,
+          };
+          const transporter = nodemailer.createTransport({
+            service: 'gmail',
+            auth: {
+              user: 'wesafe.2021@gmail.com',
+              pass: 'pooja0474@',
+            },
+          });
+          transporter.sendMail(mailOptions, (error, info) => {
+            if (error) {
+              console.log(error);
+            } else {
+              console.log('email send');
+            }
+          });
+        }
+      }
+    });
+
+    res.render('warrantys/index', {
+      warrantys,
+    });
   })
 );
 
@@ -62,17 +84,14 @@ router.post(
       owner: req.user._doc._id,
     });
     const date = moment(warranty.purchase);
-    console.log(date);
     const eDate = date.add(warranty.period, 'month').toDate();
-    console.log(eDate);
+    warranty.ISOExpDate = eDate;
     const expDate = dateToISOLikeButLocal(eDate);
-    console.log(expDate);
     warranty.expiry = expDate;
     const mDate = moment(warranty.expiry);
-    const fDate = mDate.subtract(7, 'date').toDate();
-    console.log(fDate);
+    const fDate = mDate.subtract(7, 'd').toDate();
+    warranty.ISOMailDate = fDate;
     const finalDate = dateToISOLikeButLocal(fDate);
-    console.log(finalDate);
     warranty.mailDate = finalDate;
     await warranty.save();
     req.flash('success', 'Successfully maded a warranty card');

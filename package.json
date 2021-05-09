@@ -7,13 +7,14 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "prod:postcss": "npx cross-env NODE_ENV=production npx postcss ./public/css/base.css -d ./public/css/dist.css --config ./postcss.config.js",
     "dev:postcss": "npx postcss ./public/css/base.css -d ./public/css/dist.css --config ./postcss.config.js",
-    "start" : "node app.js"
+    "start": "node app.js"
   },
   "author": "Zinc Corporation",
   "license": "ISC",
   "dependencies": {
     "connect-flash": "^0.1.1",
     "connect-mongo": "^4.4.1",
+    "cron": "^1.8.2",
     "dotenv": "^8.6.0",
     "ejs": "^3.1.6",
     "ejs-mate": "^3.0.0",
@@ -23,6 +24,7 @@
     "method-override": "^3.0.0",
     "moment": "^2.29.1",
     "mongo": "^0.1.0",
+    "mongodb-cron": "^1.7.1",
     "mongoose": "^5.12.7",
     "morgan": "^1.10.0",
     "node-cron": "^3.0.0",
@@ -32,7 +34,8 @@
     "passport-local": "^1.0.0",
     "passport-local-mongoose": "^6.1.0",
     "passport-mongoose": "0.0.1",
-    "randomstring": "^1.1.5"
+    "randomstring": "^1.1.5",
+    "request": "^2.88.2"
   },
   "devDependencies": {
     "autoprefixer": "^10.2.5",
