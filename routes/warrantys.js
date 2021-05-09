@@ -19,8 +19,6 @@ router.get(
   catchAsync(async (req, res) => {
     const userId = req.user._doc._id;
     // let d = new Date().toISOString();
-    //for(var i=0;i<warrantys.length;i++){ purchase: dateToISOLikeButLocal(warrantys[i].purchase)},
-
     const warrantys = await Warranty.find({
       owner: userId,
     });
@@ -112,7 +110,6 @@ router.get(
 
     res.render('warrantys/edit', {
       warranty,
-      purchase: dateToISOLikeButLocal(warranty.purchase),
     });
   })
 );
