@@ -1,99 +1,119 @@
 <% layout('layouts/boilerplate') %>
-<form
-  action="/warrantys/<%= warranty._id %>?_method=PUT"
-  method="POST"
-  class="needs-validation"
-  novalidate
+<div
+  style="
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+  "
 >
-  <div class="form-group row">
-    <label for="company" class="col-sm-2 col-form-label">Company Name</label>
-    <div class="col-sm-10">
-      <input
-        type="text"
-        name="warranty[company]"
-        class="form-control col-sm-10 shadow p-3 mb-2 bg-white rounded"
-        id="company"
-        value="<%= warranty.company%>"
-        required
-      />
-    </div>
-  </div>
-  <div class="form-group row">
-    <label for="product" class="col-sm-2 col-form-label">Product</label>
-    <div class="col-sm-10">
-      <input
-        type="text"
-        name="warranty[product]"
-        class="form-control col-sm-10 shadow p-3 mb-2 bg-white rounded"
-        value="<%= warranty.product%>"
-        id="product"
-        required
-      />
-    </div>
-  </div>
-  <div class="form-group row">
-    <label for="purchase" class="col-sm-2 col-form-label"
-      >Date Of Purchase</label
+  <div class="edit-page-container">
+    <form
+      action="/warrantys/<%= warranty._id %>?_method=PUT"
+      method="POST"
+      class="needs-validation"
+      novalidate
     >
-    <div class="col-sm-10">
-      <input
-        type="date"
-        name="warranty[purchase]"
-        class="form-control col-sm-10 shadow p-3 mb-2 bg-white rounded"
-        value="<%= purchase %>"
-        id="purchase"
-        required
-      />
-    </div>
-  </div>
-  <div class="form-group row">
-    <label for="period" class="col-sm-2 col-form-label">Warranty Period</label>
-    <div class="col-sm-10">
-      <input
-        type="number"
-        name="warranty[period]"
-        value="<%= warranty.period%>"
-        class="form-control col-sm-10 shadow p-3 mb-2 bg-white rounded"
-        id="period"
-        required
-      />
-    </div>
-  </div>
-  <div class="form-group row">
-    <label for="description" class="col-sm-2 col-form-label"
-      >Product Description</label
-    >
-    <div class="col-sm-10">
-      <textarea
-        name="warranty[description]"
-        id="description"
-        cols="10"
-        rows="5"
-        class="form-control col-sm-10 shadow p-3 mb-2 bg-white rounded"
-        required
-      >
-<%= warranty.description %></textarea
-      >
-    </div>
-  </div>
-  <div class="form-group row text-center">
-    <div class="col-10 col-sm-10 col-md-12 col-lg-12 mx-auto">
-      <a href="#" class="text-light">
-        <button
-          type="submit"
-          class="btn btn-warning"
-          style="color: white; width: 150px"
+      <div class="form-group row">
+        <label for="company" class="col-sm-2 col-form-label"
+          >Company Name</label
         >
-          Update
-        </button>
-      </a>
-    </div>
-  </div>
-</form>
-<div class="container">
-  <div class="btn">
-    <a href="/warrantys/<%= warranty._id%>" class="text-light">
-      <button type="submit" class="btn btn-success">Go Back</button></a
-    >
+        <div class="col-sm-10">
+          <input
+            type="text"
+            name="warranty[company]"
+            class="form-control col-sm-10 bottom-border bg-none p-3 mb-2 color-white rounded"
+            id="company"
+            value="<%= warranty.company%>"
+            required
+          />
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="product" class="col-sm-2 col-form-label">Product</label>
+        <div class="col-sm-10">
+          <input
+            type="text"
+            name="warranty[product]"
+            class="form-control col-sm-10 bg-none bottom-border p-3 mb-2 color-white rounded"
+            value="<%= warranty.product%>"
+            id="product"
+            required
+          />
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="purchase" class="col-sm-2 col-form-label"
+          >Date Of Purchase</label
+        >
+        <div class="col-sm-10">
+          <input
+            type="date"
+            name="warranty[purchase]"
+            class="form-control col-sm-10 bg-none bottom-border p-3 mb-2 color-white rounded"
+            value="<%= purchase %>"
+            id="purchase"
+            required
+          />
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="period" class="col-sm-2 col-form-label"
+          >Warranty Period</label
+        >
+        <div class="col-sm-10">
+          <input
+            type="number"
+            name="warranty[period]"
+            value="<%= warranty.period%>"
+            class="form-control col-sm-10 bg-none bottom-border p-3 mb-2 color-white rounded"
+            id="period"
+            required
+          />
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="description" class="col-sm-2 col-form-label"
+          >Product Description</label
+        >
+        <div class="col-sm-10">
+          <textarea
+            name="warranty[description]"
+            id="description"
+            cols="10"
+            rows="5"
+            class="form-control col-sm-10 bg-none bottom-border p-3 mb-2 color-white rounded"
+            required
+          >
+  <%= warranty.description %></textarea
+          >
+        </div>
+      </div>
+      <div class="form-group row text-center">
+        <div
+          class="col-10 col-sm-10 col-md-12 col-lg-12 mx-auto"
+          style="display: grid; grid-gap: 10px"
+        >
+          <a href="#" class="text-light">
+            <button
+              type="submit"
+              class="btn btn-warning show-page-btn"
+              style="color: purple; width: 150px"
+            >
+              Update
+            </button>
+          </a>
+          <a href="/warrantys/<%= warranty._id%>" class="text-light">
+            <button
+              type="submit"
+              class="btn btn-success show-page-btn"
+              style="color: purple"
+            >
+              Go Back
+            </button></a
+          >
+        </div>
+      </div>
+    </form>
   </div>
 </div>

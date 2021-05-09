@@ -1,5 +1,5 @@
 <% layout('layouts/boilerplate') %>
-<div style="display: ruby-base">
+<div style="display: flex">
   <input type="text" class="search-bar" placeholder="SEARCH IT !!" />
   <button class="btn btn-primary search-btn">
     <img src="https://img.icons8.com/ios/20/000000/search--v1.png" />
@@ -10,51 +10,6 @@
   >
     Add
   </button>
-  <div class="dropdown setting-menu">
-    <button
-      class="btn btn-secondary menu-btn"
-      style="
-        display: flex !important;
-        justify-content: center;
-        align-content: center;
-        right: 15px;
-      "
-      type="button"
-      id="dropdownMenuButton"
-      data-toggle="dropdown"
-      aria-haspopup="false"
-      aria-expanded="false"
-    >
-      <i class="fa fa-cog fa-2x" aria-hidden="true"></i>
-    </button>
-    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-      <a class="dropdown-item" href="#">Action</a>
-      <a class="dropdown-item" href="#">Another action</a>
-      <a class="dropdown-item" href="#">Something else here</a>
-    </div>
-  </div>
-</div>
-
-<div
-  class="dropdown"
-  style="display: flex; align-content: center; justify-content: center"
->
-  filters
-  <button
-    class="btn-sml opt-btn"
-    type="button"
-    id="dropdownMenuButton"
-    data-toggle="dropdown"
-    aria-haspopup="true"
-    aria-expanded="false"
-  >
-    options
-  </button>
-  <div class="dropdown-menu opt-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="#">Action</a>
-    <a class="dropdown-item" href="#">Another action</a>
-    <a class="dropdown-item" href="#">Something else here</a>
-  </div>
 </div>
 
 <!-- add card for popup -->
@@ -66,13 +21,21 @@
     class="needs-validation modal-content animate"
     novalidate
   >
+    <div class="imgcontainer">
+      <h3>Add Your Card Details</h3>
+      <span
+        onclick="document.getElementById('add-card').style.display='none'"
+        class="close"
+        >&times;</span
+      >
+    </div>
     <div class="form-group row">
       <label for="company" class="col-sm-2 col-form-label">Company Name</label>
       <div class="col-sm-10">
         <input
           type="text"
           name="warranty[company]"
-          class="form-control col-sm-10 shadow p-3 mb-2 bg-white rounded"
+          class="form-control col-sm-10 bottom-border p-3 mb-2 bg-none"
           id="company"
           required
         />
@@ -84,7 +47,7 @@
         <input
           type="text"
           name="warranty[product]"
-          class="form-control col-sm-10 shadow p-3 mb-2 bg-white rounded"
+          class="form-control col-sm-10 bottom-border p-3 mb-2 bg-none"
           id="product"
           required
         />
@@ -99,7 +62,7 @@
         <input
           type="date"
           name="warranty[purchase]"
-          class="form-control col-sm-10 shadow p-3 mb-2 bg-white rounded"
+          class="form-control col-sm-10 bottom-border p-3 mb-2 bg-none"
           id="purchase"
           required
         />
@@ -113,7 +76,7 @@
         <input
           type="number"
           name="warranty[period]"
-          class="form-control col-sm-10 shadow p-3 mb-2 bg-white rounded"
+          class="form-control col-sm-10 bottom-border p-3 mb-2 bg-none"
           id="period"
           required
         />
@@ -129,7 +92,7 @@
           id="description"
           cols="10"
           rows="5"
-          class="form-control col-sm-10 shadow p-3 mb-2 bg-white rounded"
+          class="form-control col-sm-10 bottom-border p-3 mb-2 bg-none"
           required
         ></textarea>
       </div>
@@ -139,10 +102,10 @@
         <a href="#" class="text-light">
           <button
             type="submit"
-            class="btn btn-warning"
-            style="color: white; width: 150px"
+            class="btn card-btn"
+            style="width: 150px !important"
           >
-            Update
+            Add Card
           </button>
         </a>
       </div>
@@ -155,11 +118,18 @@
   <div class="col-12 col-md-6 col-xl-4" style="padding: 2px">
     <a href="warrantys/<%=warranty._id%>"
       ><div class="cards">
-        <%=warranty.company%> <br />
+        <h2 style="color: black; font-size: 2.3rem">
+          <%=warranty.company%> <br />
+        </h2>
         <%=warranty.product%> <br />
-        <%=warranty.period%> <br />
-        <%=warranty.purchase%> <br />
-        <%=warranty.description%> <br />
+        <div class="row">
+          <div class="col-6">
+            <b>Date of Purchase : </b> <%= purchase %> <br />
+          </div>
+          <div class="col-6">
+            <b>Date of Expiry : </b> <%= warranty.expiry %><br />
+          </div>
+        </div>
       </div>
     </a>
   </div>

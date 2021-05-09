@@ -2,18 +2,20 @@
 @media screen and (min-width: 400px) and (max-width: 500px) {
   .contact-us2 {
     position: absolute !important;
-    left: 8% !important;
+    left: 6% !important;
     width: 20rem !important;
   }
 }
 @media screen and (min-width: 350px) and (max-width: 400px) {
   .contact-us2 {
-    width: 18rem !important;
+    width: 17rem !important;
   }
 }
 @media screen and (max-width: 350px) {
   .contact-us2 {
     width: 16rem !important;
+    left: 2% !important;
+    position: absolute !important;
   }
 }
 
@@ -26,8 +28,8 @@
 @media screen and (min-width: 500px) and (max-width: 650px) {
   .contact-us2 {
     position: absolute !important;
-    left: 0% !important;
-    width: 29rem !important;
+    left: 8% !important;
+    width: 23rem !important;
   }
 }
 @media screen and (max-width: 900px) {
@@ -36,7 +38,7 @@
     display: block !important;
     position: absolute !important;
     top: 2% !important;
-    height: 90rem !important;
+    height: 68rem !important;
     padding: 2rem !important;
     padding-top: 7rem !important;
   }
@@ -47,12 +49,15 @@
 @media screen and (min-width: 800px) and (max-width: 900px) {
   .contact-us2 {
     position: absolute !important;
-    left: 10% !important;
+    left: 20% !important;
   }
 }
 @media screen and (min-width: 900px) and (max-width: 1050px) {
   .maincontainer {
     width: 90% !important;
+  }
+  .contact-us2{
+    width: 20rem !important;
   }
 }
 
@@ -79,7 +84,7 @@ textarea {
   font-family: inherit;
   line-height: inherit;
 
-  width: 100%;
+  width: 95%;
   height: 90%;
   display: flex;
   flex-direction: column;
@@ -131,9 +136,9 @@ textarea {
 .contact-us2 {
   border: 2px solid white;
   background-color: white;
-  width: 34rem;
-  height: 28rem;
-  padding: 2rem;
+  width: 23rem;
+  height: 26rem;
+  padding: 1.2rem;
   border-radius: 12px;
   color: black;
   display: grid;

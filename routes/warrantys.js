@@ -1,5 +1,8 @@
 const express = require('express');
 const { ObjectID } = require('mongodb');
+const moment = require('moment');
+const cron = require('node-cron');
+
 const router = express.Router();
 
 const catchAsync = require('../utils/catchAsync');
@@ -8,6 +11,7 @@ const ExpressError = require('../utils/ExpressError');
 const Warranty = require('../models/warranty');
 const { warrantySchema } = require('../schemas.js');
 const { isLoggedIn } = require('../middleware');
+
 //for displaying all the card in the index.ejs file
 router.get(
   '/',
@@ -15,10 +19,28 @@ router.get(
   catchAsync(async (req, res) => {
     const userId = req.user._doc._id;
 
-    const warrantys = await Warranty.find({
-      owner: userId,
+    const warrantys = (
+      await Warranty.find({
+        owner: userId,
+      })
+    ).map((w) => {
+      const date = moment(w.purchase);
+      const expDate = date.add(w.period, 'month').toDate();
+      const finaldate = dateToISOLikeButLocal(expDate);
+      Object.assign(w, { expiry: finaldate });
+
+      return w;
     });
-    res.render('warrantys/index', { warrantys });
+    if (warrantys.length == 0) {
+      res.render('warrantys/index', {
+        warrantys,
+      });
+    } else {
+      res.render('warrantys/index', {
+        warrantys,
+        purchase: dateToISOLikeButLocal(warrantys[0].purchase),
+      });
+    }
   })
 );
 
@@ -58,12 +80,22 @@ router.get(
   '/:id',
   isLoggedIn,
   catchAsync(async (req, res) => {
-    const warranty = await Warranty.findById(req.params.id);
+    const warranty = await Warranty.findById(req.params.id).map((w) => {
+      const date = moment(w.purchase);
+      const expDate = date.add(w.period, 'month').toDate();
+      const finaldate = dateToISOLikeButLocal(expDate);
+      Object.assign(w, { expiry: finaldate });
+
+      return w;
+    });
     if (!warranty || !warranty.owner.equals(req.user._doc._id)) {
       req.flash('error', 'Cannot find the warranty card');
       return res.redirect('/warrantys');
     }
-    res.render('warrantys/show', { warranty });
+    res.render('warrantys/show', {
+      warranty,
+      purchase: dateToISOLikeButLocal(warranty.purchase),
+    });
   })
 );
 
