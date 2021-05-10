@@ -85,7 +85,6 @@ router.post(
     });
     const date = moment(warranty.purchase);
     const eDate = date.add(warranty.period, 'month').toDate();
-    warranty.ISOExpDate = eDate;
     const expDate = dateToISOLikeButLocal(eDate);
     warranty.expiry = expDate;
     const mDate = moment(warranty.expiry);

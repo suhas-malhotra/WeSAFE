@@ -109,7 +109,8 @@ app.get('/team', (req, res) => {
 //(position matters)
 //if nothing from the top matches then this is runned
 app.all('*', (req, res, next) => {
-  next(new ExpressError('Page Not Found', 404));
+  const message = 'Page Not Found';
+  next(new ExpressError(message, 404));
 });
 
 //for handling errors
