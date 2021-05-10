@@ -1,6 +1,11 @@
 <% layout('layouts/boilerplate') %>
 <div style="display: flex; align-items: center; margin-top: 20px">
-  <input type="text" class="search-bar" placeholder="SEARCH IT !!" />
+  <input
+    type="text"
+    class="search-bar"
+    placeholder="SEARCH IT !!"
+    id="searchName"
+  />
   <button class="btn btn-primary search-btn">
     <img src="https://img.icons8.com/ios/20/000000/search--v1.png" />
   </button>
@@ -25,7 +30,7 @@
       <h3>Add Your Warranty Card Details here</h3>
       <span
         onclick="document.getElementById('add-card').style.display='none'"
-        class="close"
+        class="close-btn"
         >&times;</span
       >
     </div>
@@ -113,16 +118,16 @@
   </form>
 </div>
 
-<div class="row" style="padding-right: 12px">
+<div class="row" style="margin-right: 12px">
   <%for(let warranty of warrantys) {%>
   <div class="col-12 col-md-6 col-xl-4" style="padding: 2px">
     <a href="warrantys/<%=warranty._id%>"
       ><div class="cards">
-        <h2 style="color: black; font-size: 2.3rem">
+        <h2 style="color: black; font-size: 2.3rem; margin-bottom: 0px">
           <%=warranty.company%> <br />
         </h2>
         <%=warranty.product%> <br />
-        <div class="row">
+        <div class="row" style="margin-top: 15px">
           <div class="col-6">
             <b>Date of Purchase : </b><%=warranty.purchase%><br />
           </div>

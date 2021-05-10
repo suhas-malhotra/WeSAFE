@@ -20,7 +20,7 @@
   }
 }
 @media screen and (max-width: 500px) {
-  .close {
+  .close-btn {
     right: 3px !important;
     top: -26px !important;
   }
@@ -157,11 +157,12 @@
 
 body {
   font-family: 'Montserrat', sans-serif;
-  background: rgb(91, 33, 182);
+  /* background-color: rgba(65, 161, 187, 0.292); */
+  background: rgb(9, 9, 121);
   background: linear-gradient(
-    60deg,
-    rgba(91, 33, 182, 1) 32%,
-    rgba(124, 58, 237, 1) 100%
+    90deg,
+    rgba(9, 9, 121, 1) 16%,
+    rgba(0, 212, 255, 1) 100%
   );
 }
 .form-control {
@@ -283,7 +284,7 @@ span.psw {
 }
 
 /* The Close Button (x) */
-.close {
+.close-btn {
   position: absolute;
   right: 25px;
   top: 0;
@@ -292,8 +293,8 @@ span.psw {
   font-weight: bold;
 }
 
-.close:hover,
-.close:focus {
+.close-btn:hover,
+.close-btn:focus {
   color: red;
   cursor: pointer;
 }
@@ -369,7 +370,7 @@ span.psw {
   justify-content: center;
   align-items: center;
   padding: 20px;
-  margin: 20px 0px 0px 10px;
+  margin: 13px 0px 0px 19px;
   box-shadow: 12px 12px 24px 0 rgba(0, 0, 0, 0.9),
     -12px -12px 24px 0 rgba(255, 255, 255, 0.5);
 }

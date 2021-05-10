@@ -25,6 +25,7 @@
     "moment": "^2.29.1",
     "mongo": "^0.1.0",
     "mongodb-cron": "^1.7.1",
+    "mongodb-realm-cli": "^2.0.0-beta.4",
     "mongoose": "^5.12.7",
     "morgan": "^1.10.0",
     "node-cron": "^3.0.0",
