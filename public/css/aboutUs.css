@@ -8,7 +8,20 @@
 html {
   scroll-behavior: smooth;
 }
-
+.hov-anim-jelly:hover {
+  animation: jelly 0.5s;
+}
+.py-5 {
+  padding-top: 1.2rem !important;
+  padding-bottom: 1rem !important;
+}
+.my-5 {
+  padding-top: 0rem !important;
+  padding-bottom: 1rem !important;
+}
+.py-5 {
+  padding-bottom: 0rem !important;
+}
 .mid {
   width: 100%;
   height: 100vh;
@@ -114,6 +127,8 @@ html {
   text-align: center;
   padding: 2rem 1.5rem;
   border-radius: 7px;
+  box-shadow: 12px 12px 24px 0 rgba(0, 0, 0, 0.9),
+    -12px -12px 24px 0 rgba(255, 255, 255, 0);
 }
 .site .text {
   display: flex;
