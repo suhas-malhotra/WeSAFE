@@ -5,6 +5,11 @@
     display: none;
   }
 }
+@media screen and (max-width: 1200px) {
+  .dis-none-1200 {
+    display: none !important;
+  }
+}
 @media screen and (max-width: 370px) {
   .card {
     padding: 32px;
