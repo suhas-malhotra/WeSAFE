@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const methodOverride = require('method-override');
 const ejsMate = require('ejs-mate');
 const session = require('express-session');
-const dotenv = require('dotenv').config();
+// require('dotenv').config();
 
 const flash = require('connect-flash');
 const passport = require('passport');
@@ -121,8 +121,12 @@ app.use((err, req, res, next) => {
   res.status(statusCode).render('error', { err });
 });
 
-//starting the Server
-const port = process.env.PORT || 8000;
-app.listen(port, () => {
-  console.log(`Server started at ${port}`);
-});
+if (!process.env.USE_VERCEL_PROD) {
+  //starting the Server
+  const port = process.env.PORT || 8000;
+  app.listen(port, () => {
+    console.log(`Server started at ${port}`);
+  });
+}
+
+module.exports = app;
