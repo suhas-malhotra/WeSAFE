@@ -8,18 +8,18 @@
 html {
   scroll-behavior: smooth;
 }
-.hov-anim-jelly:hover{
+.hov-anim-jelly:hover {
   animation: jelly 0.5s;
 }
-.py-5{
+.py-5 {
   padding-top: 1.2rem !important;
   padding-bottom: 1rem !important;
 }
-.my-5{
+.my-5 {
   padding-top: 0rem !important;
   padding-bottom: 0rem !important;
 }
-.py-5{
+.py-5 {
   padding-bottom: 0rem !important;
 }
 .mid {
@@ -32,7 +32,7 @@ html {
   align-content: center;
   text-align: center;
 }
-.my-5{
+.my-5 {
   margin-top: 0 !important;
   margin-bottom: 0 !important;
 }
@@ -56,7 +56,7 @@ html {
   padding-bottom: 1.1rem;
 }
 .mid .hero a {
-  background: yellow;
+  background: white;
   font-weight: 600;
   padding: 0.6rem 1.4rem;
   border-radius: 30px;
@@ -77,7 +77,7 @@ html {
   margin: auto;
 }
 .about .text h6 {
-  color: #b3b332;
+  color: purple;
   font-weight: 800;
   font-size: 1rem;
   letter-spacing: 2px;
@@ -102,7 +102,7 @@ html {
   margin: auto;
 }
 .discovery .text h6 {
-  color: purple;
+  color: white;
   font-weight: 800;
   font-size: 1rem;
   letter-spacing: 2px;
@@ -121,7 +121,7 @@ html {
 .service {
   background: #8c5aa0;
 }
-.heading{
+.heading {
   font-size: 5.5rem;
 }
 
@@ -134,7 +134,8 @@ html {
   text-align: center;
   padding: 2rem 1.5rem;
   border-radius: 7px;
-  box-shadow: 12px 12px 24px 0 rgba(0, 0, 0, 0.9), -12px -12px 24px 0 rgba(255, 255, 255, 0);
+  box-shadow: 12px 12px 24px 0 rgba(0, 0, 0, 0.9),
+    -12px -12px 24px 0 rgba(255, 255, 255, 0);
 }
 .site .text {
   display: flex;
@@ -154,7 +155,7 @@ html {
   font-weight: 800;
   font-size: 2.7rem;
 }
-.site{
+.site {
   background-color: white;
 }
 .site .text p {
@@ -164,7 +165,7 @@ html {
   letter-spacing: 0.5px;
 }
 @media screen and (max-width: 988px) {
-  .mid .hero  {
+  .mid .hero {
     font-size: 2.5rem !important;
   }
   .mid .hero p {
@@ -174,22 +175,23 @@ html {
     font-size: 0.9rem !important;
   }
 }
-@media screen and (max-width:1100px) and (min-width:800px) {
-  .heading{
+@media screen and (max-width: 1100px) and (min-width: 800px) {
+  .heading {
     font-size: 4.5rem !important;
   }
 }
-@media screen and (max-width:800px) and (min-width:600px) {
-  .heading{
+@media screen and (max-width: 800px) and (min-width: 600px) {
+  .heading {
     font-size: 3.5rem !important;
   }
 }
-@media screen and (max-width:600px) and (min-width:450px) {
-  .heading{
+@media screen and (max-width: 600px) and (min-width: 450px) {
+  .heading {
     font-size: 2.5rem !important;
   }
 }
-@media screen and (max-width:450px) {
-  .heading{
+@media screen and (max-width: 450px) {
+  .heading {
     font-size: 1.8rem !important;
   }
+}
