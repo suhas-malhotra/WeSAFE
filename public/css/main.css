@@ -16,7 +16,7 @@
     width: 90% !important;
   }
   .search-btn {
-    margin-left: -3rem !important;
+    margin-left: -5rem !important;
   }
 }
 @media screen and (max-width: 500px) {
@@ -40,7 +40,7 @@
     margin-left: 15px !important;
   }
   .search-bar {
-    width: 60% !important;
+    width: 70% !important;
     font-size: 15px !important;
   }
   .card-btn {
