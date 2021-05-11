@@ -92,6 +92,10 @@ app.get('/', (req, res) => {
 app.get('/pricing', (req, res) => {
   res.render('warrantys/pricing');
 });
+app.get('/terms-and-conditions', (req, res) => {
+  res.render('warrantys/terms&conditions');
+});
+
 
 app.get('/about-us', (req, res) => {
   res.render('warrantys/aboutUs');
