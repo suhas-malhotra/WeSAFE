@@ -370,13 +370,11 @@ span.psw {
   justify-content: center;
   align-items: center;
   padding: 20px;
-  margin: 13px 0px 0px 19px;
-  box-shadow: 12px 12px 24px 0 rgba(0, 0, 0, 0.9),
-    -12px -12px 24px 0 rgba(255, 255, 255, 0.5);
+  margin: 25px 0px 0px 19px;
+  box-shadow: 12px 12px 24px 0 rgba(0, 0, 0, 0.9);
 }
 .cards:hover {
-  box-shadow: 12px 12px 24px 0 rgba(0, 0, 0, 1),
-    -12px -12px 24px 0 rgba(255, 255, 255, 0.8);
+  box-shadow: 12px 12px 24px 0 rgba(0, 0, 0, 1);
   padding: 24px;
   animation: jelly 0.5s;
 }
