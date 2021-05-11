@@ -97,7 +97,7 @@ router.post(
     };
 
     const transporter = nodemailer.createTransport({
-      service: 'gmail',
+      service: 'Gmail',
       auth: {
         user: 'wesafe.2021@gmail.com',
         pass: 'pooja0474@',
