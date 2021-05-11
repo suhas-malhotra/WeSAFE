@@ -83,11 +83,11 @@ router.post(
       ...req.body.warranty,
       owner: req.user._doc._id,
     });
-    // const emailID = req.user._doc.email;
-    // const date = moment(warranty.purchase);
-    // const eDate = date.add(warranty.period, 'month').toDate();
-    // const expDate = dateToISOLikeButLocal(eDate);
-    // warranty.expiry = expDate;
+
+    const date = moment(warranty.purchase);
+    const eDate = date.add(warranty.period, 'month').toDate();
+    const expDate = dateToISOLikeButLocal(eDate);
+    warranty.expiry = expDate;
 
     // const mailOptions = {
     //   from: 'suhasmalhotra@wesafe.space',
