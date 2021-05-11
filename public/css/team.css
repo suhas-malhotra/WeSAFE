@@ -102,7 +102,7 @@ section .section-title {
 }
 
 .card-text {
-  margin: 0px 25px 10px;
+  margin: 0px -25px 10px;
 }
 
 .frontside .card .card-title,
