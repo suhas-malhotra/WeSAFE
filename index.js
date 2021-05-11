@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const methodOverride = require('method-override');
 const ejsMate = require('ejs-mate');
 const session = require('express-session');
-// require('dotenv').config();
+const dotenv = require('dotenv').config();
 
 const flash = require('connect-flash');
 const passport = require('passport');
@@ -34,11 +34,9 @@ app.engine('ejs', ejsMate);
 app.use(express.urlencoded({ extended: true }));
 
 //creating a mongoose database
-const dbUrl =
-  'mongodb+srv://suhasMalhotra:Q96Uje3m2MS6qQL@wesafe.rhdsf.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 
 mongoose
-  .connect(dbUrl, {
+  .connect(process.env.MONGODB_URI, {
     useCreateIndex: true,
     useNewUrlParser: true,
     useFindAndModify: false,
@@ -60,7 +58,7 @@ app.use(
       maxAge: 1000 * 60 * 60 * 24 * 7,
     },
     store: connectMongo.create({
-      mongoUrl: dbUrl,
+      mongoUrl: process.env.MONGODB_URI,
     }),
   })
 );
