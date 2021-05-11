@@ -17,7 +17,7 @@ router.get(
   isLoggedIn,
   catchAsync(async (req, res) => {
     const userId = req.user._doc._id;
-    // const emailID = req.user._doc.email;
+    //const emailID = req.user._doc.email;
     const warrantys = await Warranty.find({
       owner: userId,
     });
@@ -83,15 +83,39 @@ router.post(
       ...req.body.warranty,
       owner: req.user._doc._id,
     });
+    const emailID = req.user._doc.email;
     const date = moment(warranty.purchase);
     const eDate = date.add(warranty.period, 'month').toDate();
     const expDate = dateToISOLikeButLocal(eDate);
     warranty.expiry = expDate;
+
+    const mailOptions = {
+      from: 'wesafe.2021@gmail.com',
+      to: `${emailID}`,
+      subject: 'Important message from WeSAFE',
+      text: `You have just added the product ${warranty.product} of ${warranty.company} to the WeSAFE.com`,
+    };
+
+    const transporter = nodemailer.createTransport({
+      service: 'gmail',
+      auth: {
+        user: 'wesafe.2021@gmail.com',
+        pass: 'pooja0474@',
+      },
+    });
+
+    transporter.sendMail(mailOptions, (error, info) => {
+      if (error) {
+        console.log(error);
+      }
+    });
+
     // const mDate = moment(warranty.expiry);
     // const fDate = mDate.subtract(7, 'd').toDate();
     // warranty.ISOMailDate = fDate;
     // const finalDate = dateToISOLikeButLocal(fDate);
     // warranty.mailDate = finalDate;
+
     await warranty.save();
     req.flash('success', 'Successfully maded a warranty card');
     res.redirect('/warrantys');
