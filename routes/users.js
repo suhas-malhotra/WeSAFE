@@ -13,7 +13,7 @@ router.post(
   catchAsync(async (req, res, next) => {
     try {
       const { email, username, password, confirm } = req.body;
-      if (password !== confirm) {
+      if (password != confirm) {
         req.flash('error', "The passwords don't match");
         return res.redirect('/register');
       }
@@ -26,7 +26,7 @@ router.post(
         res.redirect('/warrantys');
       });
     } catch (e) {
-      req.flash('error', e.message);
+      req.flash('error', 'The Email/Username is already registered');
       res.redirect('/register');
     }
   })
