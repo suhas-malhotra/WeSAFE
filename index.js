@@ -10,12 +10,12 @@ const dotenv = require('dotenv').config();
 const flash = require('connect-flash');
 const passport = require('passport');
 const LocalStrategy = require('passport-local');
+const app = express();
 
 const ExpressError = require('./utils/ExpressError');
 const User = require('./models/user');
 const userRoutes = require('./routes/users');
 const warrantysRoutes = require('./routes/warrantys');
-const app = express();
 
 //for running update and delete command using Method Override
 app.use(methodOverride('_method'));
@@ -95,7 +95,6 @@ app.get('/pricing', (req, res) => {
 app.get('/terms-and-conditions', (req, res) => {
   res.render('warrantys/terms&conditions');
 });
-
 
 app.get('/about-us', (req, res) => {
   res.render('warrantys/aboutUs');
