@@ -1,5 +1,14 @@
 <% layout('layouts/boilerplate') %>
-<div class="main-container">
+<div
+  style="
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+
+    align-items: center;
+  "
+>
   <div class="show-page-container">
     <h1 class="Company-name"><%=warranty.company%></h1>
     <div class="show-page-content">
@@ -25,6 +34,20 @@
         <b style="color: rgb(252, 211, 77)">Product Description : </b
         ><%=warranty.description%> <br />
       </p>
+      <% warranty.images.forEach((img, i) => { %>
+      <p>
+        <img
+          src=" <%=img.url%> "
+          style="
+            display: block;
+            width: 200px;
+            height: 150px;
+            margin-left: auto;
+            margin-right: auto;
+          "
+        />
+      </p>
+      <% }) %>
     </div>
     <div class="show-page-btn-container">
       <a href="/warrantys/<%=warranty._id%>/edit"

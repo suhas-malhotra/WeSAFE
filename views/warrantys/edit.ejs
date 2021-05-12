@@ -12,6 +12,7 @@
       action="/warrantys/<%= warranty._id %>?_method=PUT"
       method="POST"
       class="needs-validation"
+      enctype="multipart/form-data"
       novalidate
     >
       <div class="form-group row">
@@ -22,7 +23,16 @@
           <input
             type="text"
             name="warranty[company]"
-            class="form-control col-sm-10 bottom-border bg-none p-3 mb-2 color-white rounded"
+            class="
+              form-control
+              col-sm-10
+              bottom-border
+              bg-none
+              p-3
+              mb-2
+              color-white
+              rounded
+            "
             id="company"
             value="<%= warranty.company%>"
             required
@@ -35,7 +45,16 @@
           <input
             type="text"
             name="warranty[product]"
-            class="form-control col-sm-10 bg-none bottom-border p-3 mb-2 color-white rounded"
+            class="
+              form-control
+              col-sm-10
+              bg-none
+              bottom-border
+              p-3
+              mb-2
+              color-white
+              rounded
+            "
             value="<%= warranty.product%>"
             id="product"
             required
@@ -50,7 +69,16 @@
           <input
             type="date"
             name="warranty[purchase]"
-            class="form-control col-sm-10 bg-none bottom-border p-3 mb-2 color-white rounded"
+            class="
+              form-control
+              col-sm-10
+              bg-none
+              bottom-border
+              p-3
+              mb-2
+              color-white
+              rounded
+            "
             value="<%= warranty.purchase %>"
             id="purchase"
             required
@@ -66,12 +94,42 @@
             type="number"
             name="warranty[period]"
             value="<%= warranty.period%>"
-            class="form-control col-sm-10 bg-none bottom-border p-3 mb-2 color-white rounded"
+            class="
+              form-control
+              col-sm-10
+              bg-none
+              bottom-border
+              p-3
+              mb-2
+              color-white
+              rounded
+            "
             id="period"
             required
           />
         </div>
       </div>
+      <!-- <div class="form-group row">
+        <label for="image" class="col-sm-2 col-form-label"
+          >Add another photo</label
+        >
+        <div class="col-sm-10">
+          <input
+            type="file"
+            name="image"
+            class="
+              form-control
+              col-sm-10
+              bg-none
+              bottom-border
+              mb-2
+              color-white
+              rounded
+            "
+            id="image"
+          />
+        </div>
+      </div> -->
       <div class="form-group row">
         <label for="description" class="col-sm-2 col-form-label"
           >Product Description</label
@@ -81,8 +139,17 @@
             name="warranty[description]"
             id="description"
             cols="10"
-            rows="5"
-            class="form-control col-sm-10 bg-none bottom-border p-3 mb-2 color-white rounded"
+            rows="3"
+            class="
+              form-control
+              col-sm-10
+              bg-none
+              bottom-border
+              p-3
+              mb-2
+              color-white
+              rounded
+            "
             required
           >
   <%= warranty.description %></textarea

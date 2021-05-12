@@ -6,9 +6,15 @@ const WarrantySchema = new Schema({
   product: String,
   purchase: String,
   expiry: String,
-  // mailDate: String,
+  images: [
+    {
+      url: String,
+      filename: String,
+    },
+  ],
+
   period: Number,
-  // ISOMailDate: Date,
+
   description: String,
   owner: ObjectID,
 });

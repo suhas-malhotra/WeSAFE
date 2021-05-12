@@ -1,5 +1,6 @@
 const express = require('express');
 const moment = require('moment');
+const multer = require('multer');
 const router = express.Router();
 
 const catchAsync = require('../utils/catchAsync');
@@ -8,7 +9,8 @@ const ExpressError = require('../utils/ExpressError');
 const Warranty = require('../models/warranty');
 const { warrantySchema } = require('../schemas.js');
 const { isLoggedIn } = require('../middleware');
-
+const { storage } = require('../cloudinary');
+const upload = multer({ storage });
 //for displaying all the card in the index.ejs file
 router.get(
   '/',
@@ -19,7 +21,6 @@ router.get(
     const warrantys = await Warranty.find({
       owner: userId,
     });
-
     res.render('warrantys/index', {
       warrantys,
     });
@@ -46,13 +47,17 @@ const validateWarranty = (req, res, next) => {
 router.post(
   '/',
   isLoggedIn,
+  upload.array('image'),
   validateWarranty,
   catchAsync(async (req, res) => {
     const warranty = new Warranty({
       ...req.body.warranty,
       owner: req.user._doc._id,
     });
-
+    warranty.images = req.files.map((f) => ({
+      url: f.path,
+      filename: f.filename,
+    }));
     const date = moment(warranty.purchase);
     const eDate = date.add(warranty.period, 'month').toDate();
     const expDate = dateToISOLikeButLocal(eDate);
@@ -102,6 +107,7 @@ router.get(
 router.put(
   '/:id',
   isLoggedIn,
+  upload.array('image'),
   validateWarranty,
   catchAsync(async (req, res) => {
     const { id } = req.params;
@@ -112,16 +118,21 @@ router.put(
     const date = moment(war.purchase);
     const eDate = date.add(war.period, 'month').toDate();
     const expDate = dateToISOLikeButLocal(eDate);
+
     const warranty = await Warranty.findByIdAndUpdate(id, {
       ...req.body.warranty,
       expiry: expDate,
     });
+    const imgs = req.files.map((f) => ({ url: f.path, filename: f.filename }));
+    warranty.images.push(...imgs);
     if (!warranty.owner.equals(req.user._doc._id)) {
       req.flash('error', 'Cannot find the warranty card');
       return res.redirect('/warrantys');
     }
+    await warranty.save();
     req.flash('success', 'Successfully updated');
     res.redirect('/warrantys');
+    // }
   })
 );
 
